@@ -65,7 +65,7 @@ function isCustomer() {
 // Redirect to Login if Not Authenticated
 function requireAuth() {
     if (!isAuthenticated()) {
-        header('Location: /hostel_booking_system/public/login.php');
+        header('Location: login.php');
         exit;
     }
 }
@@ -74,7 +74,7 @@ function requireAuth() {
 function requireAdmin() {
     requireAuth();
     if (!isAdmin()) {
-        header('Location: /hostel_booking_system/public/index.php');
+        header('Location: index.php');
         exit;
     }
 }

@@ -1,10 +1,16 @@
 <?php
 // Database Configuration - PDO Connection
 // Update these values to match your environment
+
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'np02cs4a240111');
 define('DB_USER', 'np02cs4a240111');
 define('DB_PASS', 'sEClXUPQVB');
+
+// define('DB_HOST', 'localhost');
+// define('DB_NAME', 'host_booking_db');
+// define('DB_USER', 'root');
+// define('DB_PASS', '');
 
 try {
     $pdo = new PDO(
@@ -18,7 +24,9 @@ try {
         ]
     );
 } catch (PDOException $e) {
-    // Fail early with a clear message during development
+    // Log error for debugging
+    error_log('Database Connection Error: ' . $e->getMessage());
+    // Show user-friendly message
     die('Database Connection Failed: ' . $e->getMessage());
 }
 
